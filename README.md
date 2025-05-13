@@ -20,7 +20,7 @@
 - [x] 3. useQuery 훅을 사용한 fetching
 - [x] 4. useMutation 훅을 사용한 Mutations
 - [x] 5. 쿼리 무효화 및 리패칭
-- [ ] 6. 기타 기능들(enabled 옵션, select 옵션, staleTime/cacheTime 옵션)
+- [x] 6. 기타 기능들(enabled 옵션, select 옵션, staleTime/cacheTime 옵션)
 - [ ] 7. React Query Devtools
 
 ### axios

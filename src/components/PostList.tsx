@@ -10,7 +10,14 @@ export function PostList() {
     // 게시글 목록 가져오기
     const { data, isLoading, error } = useQuery({
         queryKey: ['posts'],
-        queryFn: fetchPosts,
+        queryFn: async()=>{
+            console.log('fetchPosts 호출됨');
+            return fetchPosts();
+        },
+
+        //staleTime, cacheTime 사용
+        staleTime: 1000*5,
+        cacheTime: 1000*15,
     });
 
     // 게시글 추가 mutation
