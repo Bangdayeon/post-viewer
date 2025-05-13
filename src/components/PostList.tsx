@@ -17,7 +17,7 @@ export function PostList() {
 
         //staleTime, cacheTime 사용
         staleTime: 1000*5,
-        cacheTime: 1000*15,
+        gcTime: 1000*15,
     });
 
     // 게시글 추가 mutation
