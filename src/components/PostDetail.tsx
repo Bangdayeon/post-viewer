@@ -2,6 +2,7 @@ import {useParams} from 'react-router-dom';
 import {useQuery} from '@tanstack/react-query';
 import { fetchPostById } from '../api/posts.ts';
 import React from 'react';
+import { CommentForm } from './CommentForm.tsx';
 
 export function PostDetail() {
     const {id} = useParams<{ id: string }>();
@@ -20,6 +21,7 @@ export function PostDetail() {
         <div>
             <h2>{data.title}</h2>
             <p>{data.body}</p>
+            <CommentForm postId={postId} />
         </div>
     )
 }
