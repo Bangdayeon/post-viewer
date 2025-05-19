@@ -42,9 +42,9 @@ export function PostList() {
     };
 
     // 게시글 필터링 (zustand 사용)
-    const { category } = usePostFilterStore();
+    const { filters } = usePostFilterStore();
     const filteredPosts = data ? data.filter((post: any) => {
-        return category === 'all' || post.title.toLowerCase().includes(category.toLowerCase());
+        return filters.category === 'all' || post.title.toLowerCase().includes(filters.category.toLowerCase());
     }):[];
 
     if (isLoading) return <p>Loading...</p>;

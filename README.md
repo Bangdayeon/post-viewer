@@ -10,7 +10,7 @@
 ## 🛠 상태 관리 도구
 - 🌴 [TanStack Query](https://ldd6cr-adness.tistory.com/303)
 - axios
-- Zustand
+- [Zustand](https://ldd6cr-adness.tistory.com/297)
 - Github Action
 
 ## ✏ 공부 내용
@@ -30,6 +30,6 @@
 - [x] 2. get, set을 활용한 스토어로 필터링 컴포넌트 생성 및 사용
 - [x] 3. persist()를 사용하여 필터 상태를 로컬 스토리지에 저장
 - [x] 4. useShallow로 불필요한 렌더링 방지
-- [ ] 5.
+- [x] 5. immer와 함께하는 불변성 유지 필터링
 
 ### Github Action
