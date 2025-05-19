@@ -1,9 +1,20 @@
 // src/components/PostFilter.tsx
 import React from 'react';
 import { usePostFilterStore } from '../store/usePostFilterStore.ts';
+import { shallow } from 'zustand/shallow';
+import { useStoreWithEqualityFn } from 'zustand/traditional';
 
 const PostFilter = () => {
-    const {category, setCategory, resetCategory, getCategory} = usePostFilterStore();
+    const {category, setCategory, resetCategory, getCategory} = useStoreWithEqualityFn(
+        usePostFilterStore,
+            state=>({
+                category: state.category,
+                setCategory: state.setCategory,
+                resetCategory: state.resetCategory,
+                getCategory: state.getCategory
+            }),
+            shallow
+        );
 
     return (
         <div>
