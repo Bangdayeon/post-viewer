@@ -1,5 +1,7 @@
 // src/store/usePostFilterStore.ts
 import {create} from 'zustand';
+import { persist } from 'zustand/middleware';
+
 
 type PostFilterState = {
     category: string;
@@ -8,10 +10,15 @@ type PostFilterState = {
     getCategory: () => string;
 };
 
-export const usePostFilterStore = create<PostFilterState>((set, get)=> ({
-    category: 'all',
-    setCategory: (category) => set({category}),
-    resetCategory: ()=>set({category: 'all'}),
-    getCategory: () => get().category,
-
-}));
+export const usePostFilterStore = create<PostFilterState>()(
+    persist((set, get)=> ({
+        category: 'all',
+        setCategory: (category) => set({category}),
+        resetCategory: ()=>set({category: 'all'}),
+        getCategory: () => get().category,
+    }),
+    {
+        name: 'post-filter-storage',
+    }
+    )
+);
