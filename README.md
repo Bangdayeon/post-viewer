@@ -26,6 +26,10 @@
 ### axios
 
 ### Zustand
-- [ ]
+- [x] 1. Zustand 설치 및 기본 스토어 생성
+- [x] 2. get, set을 활용한 스토어로 필터링 컴포넌트 생성 및 사용
+- [ ] 3.
+- [ ] 4.
+- [ ] 5.
 
 ### Github Action

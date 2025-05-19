@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { fetchPosts, createPost } from "../api/posts.ts";
-import { Link } from "react-router-dom";
+import PostFilter from './PostFilter.tsx';
+import { usePostFilterStore } from '../store/usePostFilterStore.ts';
 
 
 export function PostList() {
@@ -39,15 +41,22 @@ export function PostList() {
         mutation.mutate(newPost);
     };
 
+    // 게시글 필터링 (zustand 사용)
+    const { category } = usePostFilterStore();
+    const filteredPosts = data ? data.filter((post: any) => {
+        return category === 'all' || post.title.toLowerCase().includes(category.toLowerCase());
+    }):[];
+
     if (isLoading) return <p>Loading...</p>;
     if (error instanceof Error) return <p>error: {error.message}</p>;
 
     return (
         <div>
             <h1>Post List</h1>
+            <PostFilter />
             <button onClick={handleAddPost}>Add Post</button>
         <ul>
-            {data.slice(0, 10).map((post: any) => (
+            {filteredPosts.slice(0, 10).map((post: any) => (
                 <li key={post.id}>
                     <Link to={`/posts/${post.id}`}>{post.title}</Link>
                 </li>
