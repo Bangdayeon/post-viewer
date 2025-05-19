@@ -10,7 +10,7 @@
 ## 🛠 상태 관리 도구
 - 🌴 [TanStack Query](https://ldd6cr-adness.tistory.com/303)
 - axios
-- [Zustand](https://ldd6cr-adness.tistory.com/297)
+- 🐻 [Zustand](https://ldd6cr-adness.tistory.com/297)
 - Github Action
 
 ## ✏ 공부 내용
