@@ -1,5 +1,3 @@
-// components/CommentForm.tsx
-
 import React, { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { postComment } from "../api/comments.ts";
@@ -35,7 +33,7 @@ export function CommentForm({ postId }: CommentFormProps) {
       <h3>add Comment</h3>
       <input
         type="text"
-        placeholder="name"
+        placeholder="이름"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
@@ -47,7 +45,6 @@ export function CommentForm({ postId }: CommentFormProps) {
         onChange={(e) => setBody(e.target.value)}
         required
       />
-      <br />
       <button type="submit" disabled={mutation.isPending}>
         write
       </button>

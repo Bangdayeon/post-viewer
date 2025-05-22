@@ -21,7 +21,7 @@ export function PostDetail() {
     <div>
       <h2>{data.title}</h2>
       <p>{data.body}</p>
-      <CommentForm postId={postId} /> {/*댓글 추가 폼 */}
+      <CommentForm postId={postId} />
     </div>
   );
 }

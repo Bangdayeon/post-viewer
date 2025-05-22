@@ -1,5 +1,3 @@
-// api/comments.ts
-
 export const postComment = async (comment: {
   postId: number;
   name: string;
