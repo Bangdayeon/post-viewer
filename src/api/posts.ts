@@ -18,3 +18,15 @@ export const createPost = async (newPost: {
   const res = await api.post("/posts", newPost);
   return res.data;
 };
+
+export const updatePost = async (
+  id: number,
+  updatedPost: {
+    title: string;
+    body: string;
+    userId: number;
+  }
+) => {
+  const res = await api.put(`/posts/${id}`, updatedPost);
+  return res.data;
+};
