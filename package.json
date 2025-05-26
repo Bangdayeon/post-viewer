@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^5.76.1",
-    "@tanstack/react-query-devtools": "^5.76.0",
+    "@tanstack/react-query-devtools": "^5.77.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -17,7 +17,7 @@
     "react-scripts": "5.0.1",
     "use-sync-external-store": "^1.5.0",
     "web-vitals": "^2.1.4",
-    "zustand": "^5.0.4"
+    "zustand": "^5.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

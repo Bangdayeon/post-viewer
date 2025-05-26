@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { fetchPostById } from "../api/posts.ts";
+import { getPostsById } from "../api/posts.ts";
 import React from "react";
 import { CommentForm } from "./CommentForm.tsx";
 
@@ -10,7 +10,7 @@ export function PostDetail() {
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["posts", id],
-    queryFn: () => fetchPostById(postId!),
+    queryFn: () => getPostsById(postId!),
     enabled: !!id, // id가 있을 때만 쿼리 실행
   });
 
