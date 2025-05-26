@@ -30,3 +30,8 @@ export const updatePost = async (
   const res = await api.put(`/posts/${id}`, updatedPost);
   return res.data;
 };
+
+export const deletePost = async (id: number) => {
+  const res = await api.delete(`/posts/${id}`);
+  return res.status === 200;
+};

@@ -1,9 +1,10 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getPostsById } from "../api/posts.ts";
-import React from "react";
 import { CommentForm } from "./CommentForm.tsx";
 import PostEditForm from "./PostEditForm.tsx";
+import { DeleteButton } from "./DeleteButton.tsx";
 
 export function PostDetail() {
   const { id } = useParams<{ id: string }>();
@@ -29,6 +30,7 @@ export function PostDetail() {
         userId={1}
       />
       <CommentForm postId={postId} />
+      <DeleteButton postId={postId} />
     </div>
   );
 }
